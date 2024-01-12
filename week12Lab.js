@@ -76,7 +76,7 @@ Part 1: Setup your JSON server`)
  *
  * ↓ YOUR CODE HERE ↓ */
 
-const STUDENT_ROSTER_URL = 'http://localhost:3000/studentRoster'
+const STUDENT_ROSTER_URL = 'https://65a15da1600f49256fb185fd.mockapi.io/studentRoster'
 
 /*------------------------ Part 2: HTTP Verb: GET ------------------------*/
 console.log(
@@ -94,9 +94,9 @@ Part 2: GET and displaying the information`
  *
  * ↓ YOUR CODE HERE ↓ */
 
-$.get(STUDENT_ROSTER_URL).then(data => console.log(data));
+// $.get(STUDENT_ROSTER_URL).then(data => console.log(data));
 
-$.get(STUDENT_ROSTER_URL).then(data =>
+$.get(STUDENT_ROSTER_URL).then((data) =>
   data.map((student) => {
     $('tbody').append(
       $(`
@@ -138,8 +138,8 @@ Part 3: POST and adding new students`
  * ↓ YOUR CODE HERE ↓ */
 $('#submitStudent').click(function () {
   $.post(STUDENT_ROSTER_URL, {
-    fullName: $('newName').val(),
-    researchAssignment: $('newAssignment').val(),
+    fullName: $('#newName').val(),
+    researchAssignment: $('#newAssignment').val(),
   })
 })
 
@@ -208,7 +208,6 @@ Part 4: PUT and updating the information`
  *
  * ↓ YOUR CODE HERE ↓ */
 
-console.log(`-----------Finished------------`)
 function updateUser() {
   id = $('#updateId').val()
 
@@ -221,6 +220,8 @@ function updateUser() {
   })
 }
 $('#updateStudent').click(updateUser)
+
+console.log(`-----------Finished------------`)
 /*------------------------ Optional: Style it with bootstrap! ------------------------*/
 
 /**
